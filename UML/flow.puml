@@ -1,0 +1,33 @@
+@startmindmap flow
+!theme sandstone
+
++ root 
+++ 播放＆暫停
++++ onclick evnet
+++++ React State boolen 識別播放或暫停狀態
++++++ 音頻解碼器
+++++++ 讀取檔案路徑
++++++++ Arry
+++++++++ react effect （解決播放時間軸)
++++++++++ 自動切換下一首
+
+++ 上一首
++++ onclick evnet
+++++ array list 
++++++ arry index
+++++++ array index +1
++++++++ 呼叫播放功能
+
+++ 下一首
++++ onclick evnet
+++++ array list 
++++++ arry index
+++++++ array index -1
++++++++ 呼叫播放功能
+
+++ 播放清單
++++ arrylist
+++++ React
++++++ react state([])
+
+@endmindmap
