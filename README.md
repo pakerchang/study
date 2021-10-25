@@ -1,4 +1,4 @@
-一個隨手研讀的暫存倉庫，大多以連結或隨筆為主
+一個隨手研讀的倉庫，大多以連結或隨筆為主
 
 [隨筆文章](https://github.com/pakerchang/study/tree/master/MD)
 
