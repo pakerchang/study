@@ -1,12 +1,16 @@
-### 因 CSS in JS 優缺點而開始的CSS 基本發展史及各自框架的研讀隨筆
+# 因 CSS in JS 優缺點而開始的CSS 基本發展史及各自框架的研讀隨筆
+
+
 
 > 因為看到別人被問了一句為何選用 styles components 
 > 進而開始思考起自己的選擇是不是有足夠的依據支撐
 
 一開始以為 `CSS`,`SASS`,`SCSS`,`CSS in JS`都是同一個脈絡下所衍生出的分歧技術走向，隨著相關資料閱讀逐漸增加，開始發現其中並不是想像的那麼一回事
 
+
 關於`SASS`,`SCSS`,`LESS` 原本預想的是這幾個預處理器並不支援邏輯處理，所以才蹦出`CSS in JS`這個產物
 
+---
 > CSS每代新增的渲染、排版、多媒體功能
 
 ![CSS version](../Image/CSS%20version.jpeg)
@@ -30,13 +34,13 @@
 
 透過`Babel`的轉譯，`React`, `Angular`, `Vue`在經過封裝的方式，讓開發者得以用`JS`的方式來編譯`HTML`結構，而`CSS in JS`也是透過相同的概念孕育而生，在具備`CSS`預處理器作用基礎上，多了`JS`與`CSS`直接溝通的動態操作的優勢
 
-
+---
 > 目前查到並簡單分類的分支發展狀況
 
 ![CSS History](../out/UML/CSS-tech-history/CSS%20history.png)
 
 
-
+---
 ## 疑問
 
 回歸到最一開始的問題，選擇`CSS in jS`的原因又是什麼？
