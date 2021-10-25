@@ -6,4 +6,4 @@
 
 [程式碼百寶袋](https://github.com/pakerchang/study/tree/master/temp%20code)
 
-[JS]()
+[JS](https://github.com/pakerchang/study/tree/master/JavaScript)
