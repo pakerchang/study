@@ -4,4 +4,4 @@
 
 [歐陸辭典](https://www.eudic.net/v4/en/app/eudic)
 
-[snip(screen shot)](https://snip.qq.com/)
+[snip(screen shot)](https://snip.qq.com/)****
