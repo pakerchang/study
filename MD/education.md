@@ -5,6 +5,3 @@
 [第二章](https://www.gushiciku.cn/pl/g5Rt/zh-tw)
 
 --- 
-
-### 電視劇
-[新聞急先鋒](https://www.youtube.com/watch?v=T6HNQsUfSRk&ab_channel=tangroro)
