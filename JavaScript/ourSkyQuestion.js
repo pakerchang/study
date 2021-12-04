@@ -1,72 +1,99 @@
-let a = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-let b = ["B", "B", "C"];
+const faker = require("faker");
 
-function subset(a, b) {
-	let mixSet = new Set([...a, ...b]);
-	let result = mixSet.size === a.length ? true : false;
-
-	return result;
+class HashMap {
+	constructor() {
+		this.capacity = 3;
+		this.map = new Map();
+	}
+	get(key) {
+		if (this.map.has(key)) {
+			this.map.get(key).accessTime = Date.now();
+			this.getScore(key);
+			return this.map.get(key);
+		}
+		return -1;
+	}
+	put(key, value, weight, score) {
+		this.map.set(key, { value: value, weight: weight, accessTime: Date.now(), score: score });
+		this.getScore(key);
+		// if (this.map.size > this.capacity) {
+		// 	this.capacityExcess();
+		// }
+	}
+	capacityExcess() {
+		let arrayObj;
+		arrayObj = Array.from(this.map).sort(function (a, b) {
+			return a[1].score > b[1].score ? -1 : 1;
+		});
+		arrayObj.pop();
+		this.map = new Map(arrayObj.map((i) => [i[0], i[1]]));
+	}
+	getScore(key) {
+		let score;
+		if (this.map.get(key).accessTime !== Date.now()) {
+			score = this.map.get(key).weight / Math.log(Date.now() - this.map.get(key).accessTime + 1);
+			console.log("!=");
+		} else {
+			console.log("=");
+			score = this.map.get(key).weight / -100;
+		}
+		this.map.get(key).score = score;
+		return score;
+	}
 }
-console.log(subset(a, b));
 
+let t1 = new HashMap();
 
-// function isSubset(a, b) {
-// 	if (a.length > b.length) {
-// 		return false;
-// 	}
+t1.put("C", "∑∑œå®œ∑´®", 11);
+t1.put("A", "¬…˚œ∆ƒœ´", 11);
+t1.put("F", "¬˚œ∆ø∆œˆåœ¬˚∑´µœˆ", 11);
+t1.put("P", "øœ´ˆ¨®∆¬˚∆≥µ˜∫˜∆πå", 11);
+t1.put("O", "¡™ª•£∆øˆœ¨∑ºª´•¨å", 11);
+t1.put("K", "ºª•ºª•ªº•¡™£πøˆπø", 11);
 
-// 	var hash = {};
-// 	for (var i = 0; i < a.length; ++i) {
-// 		if (hash[a[i]] === undefined) {
-// 			hash[a[i]] = 0;
+console.log(t1);
+setTimeout(() => {
+	console.log("after: ", t1.get("F"));
+	console.log(t1);
+}, 50000);
+// function HashMap() {
+// 	this.map = new Map();
+// }
+
+// HashMap.prototype = {
+// 	get: function (key) {
+// 		if (this.map.hasOwnProperty(key)) {
+// 			return this.map[key];
 // 		}
-// 		hash[a[i]]++;
-// 		// console.log(hash[a[i]]);
-// 	}
-// 	console.log(hash);
-// 	for (var i = 0; i < b.length; ++i) {
-// 		if (hash[b[i]] !== undefined) hash[b[i]]--;
-// 	}
+// 		return -1;
+// 	},
+// 	put: function (key, value, weight) {
+// 		this.map[key] = [value, weight, accessTime];
+// 	},
+// };
+// HashMap.prototype.constructor = HashMap;
 
-// 	var keys = Object.keys(hash);
-// 	for (var each_key in keys) {
-// 		if (hash[keys[each_key]] > 0) return false;
-// 	}
-// 	return true;
+// function recur(n, cur) {
+// 	if (!cur) cur = 0;
+// 	console.log("Recur entry : " + n, cur);
+// 	if (n < 2) throw new Error("Invalid Input");
+// 	if (n === 2) return 1 / n + cur;
+// 	console.log("return : ", n, "cur: ", cur);
+// 	return recur(n - 1, cur + 1 / (n * (n - 1)));
 // }
+// console.log("recur: ", recur(4) + "\n");
 
-// // test
-// var a = ["B", "A", "C"];
-// var b = ["A", "B", "C", "D"];
-// console.log(isSubset(a, b));
-
-// a = ["B", "A", "C", "A"];
-// b = ["A", "B", "C", "D", "A"];
-
-// console.log(isSubset(a, b));
-// const isSubSet = (array1, array2) => array2.every((item) => array1.includes(item));
-// console.log(isSubSet(array1, array2));
-
-// function isSubset2(array1, array2) {
-// 	let count = 0;
-
-// 	// 怎麼取 array1,array2 的 value;
-// 	for (let j = 0; j < array1.length; j++) {
-// 		if (array2[i] !== array1[j]) count++;
+// function withoutRecur(n, cur) {
+// 	let result;
+// 	for (cur = 0; n > 1; n--) {
+// 		console.log("withoutRecur entry: ", n, "cur", cur);
+// 		if (n === 2) {
+// 			result = 1 / n + cur;
+// 			return result;
+// 		}
+// 		cur += 1 / (n * (n - 1));
+// 		console.log("return: ", n, "cur", cur);
 // 	}
-// 	for (let i = 0; i < array2.length; i++) {}
+// 	return result;
 // }
-
-// function tt() {
-// 	let count = 0;
-// 	for (var i = 1; i <= 5; i++) {
-// 		console.log(count++, 1 + i);
-// 		setTimeout(function () {
-// 			console.log(i);
-// 		}, 0);
-// 	}
-// }
-// console.log(tt());
-
-// 時間複雜度就如同單向流水線作業，若非一次性批量處理，單次處理的量＝時間
-// array2 為動態資料遍歷匹配 array1 靜態資料為主，單次匹配最大上限為 26 - X ，遍歷加上比對，其複雜度是為 O(2^n) ?
+// console.log("foo: ", withoutRecur(4));

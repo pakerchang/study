@@ -1,6 +1,12 @@
+node_modules
+
 .DS_Store
-
 .vscode
-
-
 .gitignore
+
+ourSkyAnswer1.md
+ourSkyAnswer2.md
+ourSkyAnswer3.md
+
+JavaScript/ourSkyQuestion.js
+JavaScript/temp.js

@@ -25,6 +25,10 @@
 
 ## Data structure and algorithm
 
+[JS 資料結構 hash-table 筆記](https://medium.com/@nicehorse06/js-%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B-hash-table-9eed0e7b6f46)
+
+[JS Hash tables vs. Arrays](https://medium.com/@vx3012564897/js-hashtables-vs-arrays-af41a332ec54)
+
 [用 JavaScript 學習資料結構與演算法 0：導讀](https://break0344.medium.com/data-structures-and-algorithms-0-720c04cb8082)
 
 [[演算法] Big O Notation, Time Complexity & Space Complexity](https://pjchender.dev/dsa/algo-intro/)
