@@ -56,6 +56,10 @@ setTimeout(() => {
 	console.log("after: ", t1.get("F"));
 	console.log(t1);
 }, 50000);
+
+for (let i = 0; i < 100; i++) {
+	console.log(i);
+}
 // function HashMap() {
 // 	this.map = new Map();
 // }
